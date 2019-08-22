@@ -1,0 +1,59 @@
+
+
+viecmpnt.component.html
+
+<h1>Am {{name}}</h1>
+<h2>Age : {{Age}}</h2>
+<h3>Hobbies:</h3><br>
+<li *ngFor="let i of hobbies">{{i}}</li>
+<table border="1px">
+    <tr *ngFor="let i of hobbies;let x = index">
+            <td >{{x+1}}</td>
+        <td >{{i}}</td>
+        
+    </tr>
+   
+</table>
+
+<table border="1px">
+        <tr><th>Project Name</th> <th>Duration</th> <th>End date</th></tr>
+            
+        <tr *ngFor="let i of projectss;let x = index">
+                <td >{{i.name}}</td>
+            <td >{{i.duration}}</td>
+            <td >{{i.enddate}}</td>
+        </tr>
+    </table>
+
+
+
+
+viecmpnt.component.ts
+
+
+
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-viecmpnt',
+  templateUrl: './viecmpnt.component.html',
+  styleUrls: ['./viecmpnt.component.css']
+})
+export class ViecmpntComponent implements OnInit {
+name:String
+Age
+hobbies:String[]
+projectss:any[]=[]
+day:Date
+
+  constructor() {
+  this.name="Arohi"
+  this.Age=24
+  this.hobbies=["reading","thinking"]
+  this.projectss=[{name:"p1",duration:"30days",enddate:"12/12/2019"},{name:"p2",duration:"20days",enddate:"12/11/2019"}]
+   }
+
+  ngOnInit() {
+  }
+
+}

@@ -3,7 +3,25 @@
 <h3>Hobbies:</h3><br>
 <li *ngFor="let i of hobbies">{{i}}</li>
 <table border="1px">
-    <tr *ngFor="let i of hobbies">
+    <tr *ngFor="let i of hobbies;let x = index">
+            <td >{{x+1}}</td>
         <td >{{i}}</td>
+        
     </tr>
+   
 </table>
+<br>
+
+<input type="button" value="Add Project" name="btn1" (click)="Add()">
+
+<br>
+
+<table border="1px">
+        <tr><th>Project Name</th> <th>Duration</th> <th>End date</th></tr>
+            
+        <tr *ngFor="let i of projectss;let x = index">
+                <td >{{i.name}}</td>
+            <td >{{i.duration}}</td>
+            <td >{{i.enddate}}</td>
+        </tr>
+    </table>

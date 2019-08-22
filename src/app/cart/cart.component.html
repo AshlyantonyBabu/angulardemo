@@ -1,0 +1,49 @@
+<h1>Cart</h1>
+<input type="button" value="view cart" (click)="viewt()"><input type="button" value="hide cart" (click)="hide()">
+<table border="1px" *ngIf="view">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>Price</th>
+        <th>
+            Company
+        </th>
+        <th>
+            Add
+        </th>
+    </tr>
+
+<tr *ngFor = "let x of product; let i=index">
+<td>{{x.name}} </td>
+<td>{{x.price}}</td>
+<td>{{x.company}}</td>
+<td><input type="button" value="Add to Cart" (click)="Cart(i);" name="add1"></td>
+</tr>
+
+</table>
+
+<hr>
+<table border="1px">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>Price</th>
+        <th>
+            Company
+        </th>
+        <th>
+            Add
+        </th>
+    </tr>
+
+<tr *ngFor = "let x of cartadd; let i=index">
+<td>{{x.name}} </td>
+<td>{{x.price}}</td>
+<td>{{x.company}}</td>
+<td><input type="button" value="delete Cart" (click)=delete(i) name="add1"></td>
+</tr>
+
+</table>
+

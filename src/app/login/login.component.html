@@ -1,0 +1,36 @@
+<div>
+<h1>Login...</h1>
+
+<table>
+        <tr>
+            <td>
+                username
+            </td>
+            <td>
+                <input type="text" name="user">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                password
+            </td>
+            <td>
+                <input type="password" name="pass">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                    <button class="btn waves-effect waves-light" type="submit" name="action" >Login
+                            <i class="material-icons right"></i>
+                          </button>
+    
+            </td>
+    
+        </tr>
+        <tr>
+                <a class="waves-effect waves-light btn"(click)="viewa();"><i class="material-icons left"></i>signUp</a>
+        </tr>
+    </table>
+</div>
+<app-signup  *ngIf="view"></app-signup>
