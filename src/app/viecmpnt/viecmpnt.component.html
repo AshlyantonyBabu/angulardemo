@@ -1,0 +1,9 @@
+<h1>Am {{name}}</h1>
+<h2>Age : {{Age}}</h2>
+<h3>Hobbies:</h3><br>
+<li *ngFor="let i of hobbies">{{i}}</li>
+<table border="1px">
+    <tr *ngFor="let i of hobbies">
+        <td >{{i}}</td>
+    </tr>
+</table>
