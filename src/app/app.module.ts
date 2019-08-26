@@ -10,9 +10,28 @@ import { SignupComponent } from './signup/signup.component';
 import { RamComponent } from './ram/ram.component';
 import { CalcComponent } from './calc/calc.component';
 import { MarkComponent } from './mark/mark.component';
-
-import { from } from 'rxjs';
+import {RouterModule,Routes} from '@angular/router'
 import { HeaderComponent } from './header/header.component';
+import { ProductComponent } from './product/product.component';
+import { EditComponent } from './edit/edit.component';
+import { ViewComponent } from './view/view.component';
+import { AddComponent } from './add/add.component';
+import { DeleteComponent } from './delete/delete.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { DataComponent } from './data/data.component';
+import {CalcService} from './calc.service';
+import {HttpClientModule} from '@angular/common/http';
+import { MsgService } from './msg.service'
+import {HttpClient}from '@angular/common/http'
+
+const approutes:Routes=[{path:"new",component:AddComponent},
+{path:"edit",component:EditComponent},
+{path:"del",component:DeleteComponent},
+{path:"view",component:ViewComponent},
+{path:"about",component:AboutComponent},
+{path:"contact",component:ContactComponent},
+{path:"service",component:DataComponent}]
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,12 +43,20 @@ import { HeaderComponent } from './header/header.component';
     RamComponent,
     CalcComponent,
     MarkComponent,
-    HeaderComponent
+    HeaderComponent,
+    ProductComponent,
+    EditComponent,
+    ViewComponent,
+    AddComponent,
+    DeleteComponent,
+    AboutComponent,
+    ContactComponent,
+    DataComponent
   ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,RouterModule.forRoot(approutes),HttpClientModule
   ],
-  providers: [],
+  providers: [CalcService,MsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,16 @@
+ <h1>{{name1.s}}</h1> 
+<div>
+   First Number: <input type="text" name="txt1" id="" [(ngModel)]="num1" />
+  Second Number:  <input type="text" name="txt2" id="" [(ngModel)]="num2"/>
+    <input type="button" value="sum" name="btsum" (click)="sum();"/>
+    <input type="button" value="difference" name="btdif" (click)="dif();"/>
+    <input type="button" value="show" name="btshw" (click)="show();"/>
+
+
+
+
+</div>
+<div>
+        <label for="" *ngIf="view" style="font-size: 30px">Result : {{val}} </label>
+        <label for="" *ngIf="view" style="font-size: 30px">mssg: {{m.msg}} </label>
+</div>
