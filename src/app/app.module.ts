@@ -24,7 +24,9 @@ import {CalcService} from './calc.service';
 import {HttpClientModule} from '@angular/common/http';
 import { MsgService } from './msg.service'
 import {HttpClient}from '@angular/common/http'
-
+import{ProductsService}from './products.service'
+import{StorageServiceModule}from 'angular-webstorage-service'
+import{FileUploadModule}from 'ng2-file-upload'
 const approutes:Routes=[{path:"new",component:AddComponent},
 {path:"edit",component:EditComponent},
 {path:"del",component:DeleteComponent},
@@ -51,12 +53,13 @@ const approutes:Routes=[{path:"new",component:AddComponent},
     DeleteComponent,
     AboutComponent,
     ContactComponent,
-    DataComponent
+    DataComponent,
+
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule.forRoot(approutes),HttpClientModule
+    BrowserModule,FormsModule,RouterModule.forRoot(approutes),HttpClientModule,FileUploadModule,StorageServiceModule
   ],
-  providers: [CalcService,MsgService],
+  providers: [CalcService,MsgService,ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,36 @@
-<p>view works!</p>
+
+<button (click)="viewdata();"> view data</button>
+
+<table *ngIf="view">
+    <tr>
+        <th>
+            Itemname
+        </th>
+        <th>
+            ItemPrice
+        </th>
+        <th>
+            Itemqty
+        </th>
+    </tr>
+    <tr *ngFor="let i of m;let j">
+        <td>{{i.itemname}}</td>
+        <td>{{i.itemprice}}</td>
+        <td>
+        {{i.itemqty}}
+        </td>
+        <td>
+            <button>Add To Cart</button>
+        </td>
+        <td>
+            <button (click)="gotoedit(i.itemname);">Edit</button>
+        </td>
+    </tr>
+</table>
+<div>
+    item name<input type="text" name="name1" id=""  [(ngModel)]="name1">
+item price<input type="text" name="name1" id=""  [(ngModel)]="price1">
+item qty<input type="text" name="name1" id=""  [(ngModel)]="qty1">
+<button (click)="editdata();">Edit data</button>
+
+</div>

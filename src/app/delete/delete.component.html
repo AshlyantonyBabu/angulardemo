@@ -1,1 +1,19 @@
-<p>delete works!</p>
+
+name <input type="text" name="" id="" [(ngModel)]="val">
+price <input type="text" name="" id="" [(ngModel)]="val1">
+qty<input type="text" name="" id="" [(ngModel)]="val2">
+<button (click)="Add();">Add</button>
+<button (click)="Addcart();">Addcart</button>
+<h1>{{user}}</h1>
+<table>
+
+
+<tr *ngFor="let i of cart"> 
+    <td>{{i.name}}</td>
+    <td>
+            {{i.price}}
+    </td>
+    <td>
+        {{i.qty}}
+    </td>
+</table>
