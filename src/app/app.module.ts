@@ -26,14 +26,16 @@ import { MsgService } from './msg.service'
 import {HttpClient}from '@angular/common/http'
 import{ProductsService}from './products.service'
 import{StorageServiceModule}from 'angular-webstorage-service'
-import{FileUploadModule}from 'ng2-file-upload'
-const approutes:Routes=[{path:"new",component:AddComponent},
+import{FileUploadModule}from 'ng2-file-upload';
+import { HomeComponent } from './home/home.component'
+const approutes:Routes=[{path:"",component:LoginComponent},{path:"home",component:HomeComponent,
+children:[{path:"new",component:AddComponent},
 {path:"edit",component:EditComponent},
 {path:"del",component:DeleteComponent},
 {path:"view",component:ViewComponent},
-{path:"about",component:AboutComponent},
+{path:"about/:name/:cname",component:AboutComponent},
 {path:"contact",component:ContactComponent},
-{path:"service",component:DataComponent}]
+{path:"service",component:DataComponent}]}] 
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,6 +56,7 @@ const approutes:Routes=[{path:"new",component:AddComponent},
     AboutComponent,
     ContactComponent,
     DataComponent,
+    HomeComponent,
 
   ],
   imports: [

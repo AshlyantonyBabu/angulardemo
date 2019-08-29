@@ -26,4 +26,7 @@ public gotoedit(i:string){
   console.log(i)
 this.sc.getdatadb(i).subscribe(data=>this.n=data)
 }
+public Addtocart(iname){
+  
+}
 }
